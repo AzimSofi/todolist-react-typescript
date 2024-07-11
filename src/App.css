@@ -16,6 +16,10 @@
   cursor: pointer;
 }
 
+.todoList {
+  padding: 0;
+}
+
 .todoList li {
   width: 10%;
   display: flex;
