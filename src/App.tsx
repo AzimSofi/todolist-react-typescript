@@ -6,6 +6,7 @@ import "./App.css";
 
 export type Todo = {
   inputValue: string;
+  inputDate: string;
   id: number;
   checked: boolean;
 };
@@ -13,6 +14,7 @@ export type Todo = {
 function App() {
   const [inputText, setInputText] = useState("");
   const [todos, setTodos] = useState<Todo[]>([]);
+  const [inputDate, setInputDate] = useState("");
 
   return (
     <div className="App">
@@ -26,14 +28,17 @@ function App() {
         <h2>TypescriptでTodoリスト</h2>
         <TodoForm
           inputText={inputText}
+          inputDate={inputDate}
           setInputText={setInputText}
-          setTodos={setTodos}
           todos={todos}
+          setTodos={setTodos}
         />
+        <br />
         <TodoList
           todos={todos}
-          setTodos = {setTodos}
+          setTodos={setTodos}
         />
+        <br />
         <ClearAll
           setTodos={setTodos}
         />

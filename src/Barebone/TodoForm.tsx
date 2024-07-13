@@ -3,12 +3,13 @@ import { Todo } from "../App";
 
 interface TodoFormProps {
   inputText: string;
+  inputDate: string;
   todos: Todo[];
   setInputText: React.Dispatch<React.SetStateAction<string>>;
   setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
 }
 
-const TodoForm: React.FC<TodoFormProps> = ({ inputText, setInputText, todos, setTodos }) => {
+const TodoForm: React.FC<TodoFormProps> = ({ inputText, inputDate, setInputText, todos, setTodos }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     setInputText(e.target.value);
@@ -23,6 +24,7 @@ const TodoForm: React.FC<TodoFormProps> = ({ inputText, setInputText, todos, set
 
     const newTodo: Todo = {
       inputValue: inputText,
+      inputDate: inputDate,
       id: todos.length,
       checked: false,
     };

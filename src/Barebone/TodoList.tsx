@@ -8,47 +8,22 @@ interface TodoListProps {
 }
 
 const TodoList: React.FC<TodoListProps> = ({ todos, setTodos }) => {
-  const handleEdit = (id: number, inputValue: string) => {
-    const deepCopy = todos.map((todo) => ({ ...todo }));
-    const newTodos = deepCopy.map((todo) => {
-      if (todo.id === id) {
-        todo.inputValue = inputValue;
-      }
-      return todo;
-    });
-
-    setTodos(newTodos);
-  };
-
-  const handleChecked = (id: number, checked: boolean) => {
-    const deepCopy = todos.map((todo) => ({ ...todo }));
-    const newTodos = deepCopy.map((todo) => {
-      if (todo.id === id) {
-        todo.checked = !checked;
-      }
-      return todo;
-    });
-
-    setTodos(newTodos);
-  };
-
-  const handleDelete = (id: number) => {
-    const newTodos = todos.filter((todo) => todo.id !== id);
-    setTodos(newTodos);
-  };
-
   return (
-    <ul className="todoList">
-      {todos.map((todo) => (
-        <TodoItem
-          key={todo.id}
-          todo={todo}
-          handleEdit={handleEdit}
-          handleChecked={handleChecked}
-          handleDelete={handleDelete}
-        />
-      ))}
-    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>完了</th>
+          <th>タスク</th>
+          <th>期限</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        {todos.map((todo) => (
+          <TodoItem todo={todo} todos={todos} setTodos={setTodos} />
+        ))}
+      </tbody>
+    </table>
   );
 };
 

@@ -16,17 +16,22 @@
   cursor: pointer;
 }
 
-.todoList {
-  padding: 0;
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
 
-.todoList li {
-  width: 10%;
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
+th {
+  background-color: #dddddd;
 }
 
-.todoList li input {
-  padding: 7px;
+td, th {
+  border: 1px solid #000000;
+  text-align: left;
+  padding: 8px;
 }
+
+/* tr:nth-child(even) {
+  background-color: #dddddd;
+} */
