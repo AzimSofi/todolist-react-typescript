@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import "./App.css";
 
 function App() {
+<<<<<<< Updated upstream
   const [inputText, setInputText] = useState("");
   //todo配列オブジェクトの更新用に用意。プロパティはinputValue, id, checkedの３つを更新する。
+=======
+  const [inputText, setInputText] = useState(""); // const [state, setState] = useState<type eg. string>(//initial value)
+>>>>>>> Stashed changes
   const [todos, setTodos] = useState<Todo[]>([]);
 
   type Todo = {
