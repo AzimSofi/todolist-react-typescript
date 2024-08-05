@@ -2,6 +2,7 @@ import React from "react";
 import TodoItem from "./TodoItem";
 import { Todo } from "../App";
 import SortFinished from "../NewFeature/Sort/SortFinished";
+import SortDeadline from "../NewFeature/Sort/SortDeadline";
 
 interface TodoListProps {
   todos: Todo[];
@@ -19,7 +20,11 @@ const TodoList: React.FC<TodoListProps> = ({ todos, setTodos }) => {
             <SortFinished todos={todos} setTodos={setTodos} />
           </th>
           <th>タスク</th>
-          <th>締切</th>
+          <th>
+            締切
+            <br />
+            <SortDeadline todos={todos} setTodos={setTodos} />
+          </th>
           <th>操作</th>
         </tr>
       </thead>

@@ -16,7 +16,7 @@ const SortFinished: React.FC<SortFinishedProps> = ({ todos, setTodos }) => {
     setTodos(sortedTodos);
   };
 
-  return <button onClick={handleSort}>Sort</button>;
+  return <button onClick={handleSort}>整理</button>;
 };
 
 export default SortFinished;
